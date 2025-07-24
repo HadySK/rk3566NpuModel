@@ -22,3 +22,6 @@ So the Plan to run MatMul is Simple :
 Create Pytorch model with a single matmul layer >> export as onnx >> use RKNN toolkit to convert onnx model to Rknn model >> run model on NPU
 
 RKnn Toolkit doesnt work on ARM so we need x86-64 PC, I made a quick google colab notebook (RK3566_NPU_Model.ipynb) that installs rknn-toolkit, creates the model and convert it to rknn model
+
+Note that when we create the model we should specify that random tensors type to be float16 because the Rk3566 npu only support fp16 and the tensors type created by torch were float32 by default,
+In reality that doesn't matter because rknn runs at FP16 anyway even if the model was fp32
