@@ -16,7 +16,7 @@ The good folks at QEngineering have a repo with an Ubuntu Image with everything 
 My plan was to run a couple of matrices operations on the NPU to see how it behaves and just mess around. and my understanding was that Rockchip provides an SDK that you can use in Python and C. 
 After a few days of research i discovered that the SDK Python APIs can only be used to just run models, while C APIs can be used to run matmul.
 
-As a workaround to run Matmul with Python on the NPU, we could either use the C code inside python with c_style(looks weird), or create a model with a single layer of matmul then run it on the NPU. I opted for the latter
+As a workaround to run Matmul with Python on the NPU, we could either use the C code inside python with ctypes(looks weird), or create a model with a single layer of matmul then run it on the NPU. I opted for the latter
 ## How to run MatMul
 So the Plan to run MatMul is Simple :
 Create Pytorch model with a single matmul layer >> export as onnx >> use RKNN toolkit to convert onnx model to Rknn model >> run model on NPU
