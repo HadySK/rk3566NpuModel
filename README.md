@@ -1,7 +1,7 @@
 # rk3566NpuModel
 This repo has code to create a matmul model in torch then convert it to rknn model and run it on rockchip npu
 
-Story time 
+Story time  
 following my adventures with Raspberry Pi Zero 2W and OpenCL, I started my search for another Zero form factor SBC that can perform AI/ML operation at fast enough rate.
 After search for a while, I got myself the Radxa Zero 3W board (4GB model)
 It has a quad-core ARM CPU (Good)
